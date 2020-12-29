@@ -423,3 +423,5 @@ td,
 th {
   padding: 0;
 }
+
+.error {background-color: #FF0000;}

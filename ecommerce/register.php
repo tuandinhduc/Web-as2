@@ -5,6 +5,29 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if (isset($_SESSION["username"])) {header ("location:index.php");}
 
+$fnameErr = $lnameErr = $addressErr = $cityErr = $emailErr = $passwordErr = "";
+
+//check input user
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["fname"])) {
+    $fnameErr = "First name is required";
+  }
+  else if (empty($_POST["lname"])) {
+    $lnameErr = "Last name is required";
+  }
+  else if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  }
+  else if (empty($_POST["pwd"])) {
+    $passwordErr = "Password is required";
+  }
+  else if (strlen($_POST["pwd"]) < 6) {
+    $passwordErr = "Password must be at least 6 characters";
+  }
+  else {
+    include './insert.php';
+  }
+}
 
 ?>
 
@@ -51,66 +74,78 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
     </nav>
 
 
-
-
-
-    <form method="POST" action="insert.php" style="margin-top:30px;">
+    <!-- <form method="POST" action="insert.php" style="margin-top:30px;"> -->
+    <form method="POST" action="" style="margin-top:30px;">
+      
       <div class="row">
         <div class="small-8">
-
           <div class="row">
+          <p class="error">* Required field</p>
             <div class="small-4 columns">
               <label for="right-label" class="right inline">First Name</label>
             </div>
-            <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Nayan" name="fname">
+            <div class="small-7 columns">
+              <input type="text" id="right-label" placeholder="Nguyen" name="fname">
+              <p class="error"><?php echo $fnameErr; ?></p>
             </div>
+            <div class="small-1 columns">*</div>
           </div>
+
           <div class="row">
             <div class="small-4 columns">
               <label for="right-label" class="right inline">Last Name</label>
             </div>
-            <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Seth" name="lname">
+            <div class="small-7 columns">
+              <input type="text" id="right-label" placeholder="Nam" name="lname">
+              <p class="error"><?php echo $lnameErr; ?></p>
             </div>
+            <div class="small-1 columns">*</div>
           </div>
+
           <div class="row">
             <div class="small-4 columns">
               <label for="right-label" class="right inline">Address</label>
             </div>
-            <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Infinite Loop" name="address">
+            <div class="small-7 columns">
+              <input type="text" id="right-label" placeholder="KTX A" name="address">
             </div>
+            <div class="small-1 columns"></div>
           </div>
+
           <div class="row">
             <div class="small-4 columns">
               <label for="right-label" class="right inline">City</label>
             </div>
-            <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Mumbai" name="city">
+            <div class="small-7 columns">
+              <input type="text" id="right-label" placeholder="Ho Chi Minh" name="city">
             </div>
+            <div class="small-1 columns"></div>
           </div>
-          
           
           <div class="row">
             <div class="small-4 columns">
               <label for="right-label" class="right inline">E-Mail</label>
             </div>
-            <div class="small-8 columns">
-              <input type="email" id="right-label" placeholder="nayantronix@gmail.com" name="email">
+            <div class="small-7 columns">
+              <input type="email" id="right-label" placeholder="nguyenvana@example.com" name="email">
+              <p class="error"><?php echo $emailErr; ?></p>
             </div>
+            <div class="small-1 columns">*</div>
           </div>
+
           <div class="row">
             <div class="small-4 columns">
               <label for="right-label" class="right inline">Password</label>
             </div>
-            <div class="small-8 columns">
+            <div class="small-7 columns">
               <input type="password" id="right-label" name="pwd">
+              <p class="error"><?php echo $passwordErr; ?></p>
             </div>
+            <div class="small-1 columns">*</div>
           </div>
+
           <div class="row">
             <div class="small-4 columns">
-
             </div>
             <div class="small-8 columns">
               <input type="submit" id="right-label" value="Register" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
@@ -126,7 +161,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
       <div class="small-12">
 
         <footer>
-           <p style="text-align:center; font-size:0.8em;">&copy; BOLT Sports Shop. All Rights Reserved.</p>
+           <p style="text-align:center; font-size:0.8em;">Sports Shop. All Rights Reserved.</p>
         </footer>
 
       </div>

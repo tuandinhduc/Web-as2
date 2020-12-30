@@ -2,7 +2,7 @@
 
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
-include 'config.php';
+include '../include/config.php';
 ?>
 
 <!doctype html>
@@ -11,7 +11,7 @@ include 'config.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products || Shoes Shop</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -19,7 +19,7 @@ include 'config.php';
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">Shoes Shop</a></h1>
+          <h1><a href="../index.php">Shoes Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -75,7 +75,7 @@ include 'config.php';
 
               echo '<div class="large-4 columns">';
               echo '<p><h3>'.$obj->product_name.'</h3></p>';
-              echo '<img src="images/products/'.$obj->product_img_name.'"/>';
+              echo '<img src="../images/products/'.$obj->product_img_name.'"/>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
               echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
@@ -84,7 +84,7 @@ include 'config.php';
 
 
               if($obj->qty > 0){
-                echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'"><input type="submit" value="Add To Cart" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; padding: 10px;" /></a></p>';
+                echo '<p><a href="../ultilities/update-cart.php?action=add&id='.$obj->id.'"><input type="submit" value="Add To Cart" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; padding: 10px;" /></a></p>';
               }
               else {
                 echo 'Out Of Stock!';

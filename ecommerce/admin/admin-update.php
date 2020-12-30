@@ -4,10 +4,10 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if($_SESSION["type"]!="admin") {
-  header("location:index.php");
+  header("location:../../index.php");
 }
 
-include 'config.php';
+include '../include/config.php';
 
 $_SESSION["products_id"] = array();
 $_SESSION["products_id"] = $_REQUEST['quantity'];
@@ -38,7 +38,7 @@ if($result) {
 
 
 
-header ("location:success.php");
+header ("location:../pages/success.php");
 
 
 

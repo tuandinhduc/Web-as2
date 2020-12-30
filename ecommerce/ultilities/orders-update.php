@@ -2,7 +2,7 @@
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-include 'config.php';
+include '../include/config.php';
 
 if(isset($_SESSION['cart'])) {
 
@@ -66,6 +66,6 @@ if(isset($_SESSION['cart'])) {
 }
 
 unset($_SESSION['cart']);
-header("location:success.php");
+header("location:../pages/success.php");
 
 ?>

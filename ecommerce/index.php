@@ -27,20 +27,20 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
-          <li><a href="about.php">About</a></li>
-          <li><a href="products.php">Products</a></li>
-          <li><a href="cart.php">View Cart</a></li>
-          <li><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="pages/about.php">About</a></li>
+          <li><a href="pages/products.php">Products</a></li>
+          <li><a href="pages/cart.php">View Cart</a></li>
+          <li><a href="pages/orders.php">My Orders</a></li>
+          <li><a href="pages/contact.php">Contact</a></li>
           <?php
 
           if(isset($_SESSION['username'])){
-            echo '<li><a href="account.php">My Account</a></li>';
-            echo '<li><a href="logout.php">Log Out</a></li>';
+            echo '<li><a href="pages/account.php">My Account</a></li>';
+            echo '<li><a href="pages/logout.php">Log Out</a></li>';
           }
           else{
-            echo '<li><a href="login.php">Log In</a></li>';
-            echo '<li><a href="register.php">Register</a></li>';
+            echo '<li><a href="pages/login.php">Log In</a></li>';
+            echo '<li><a href="pages/register.php">Register</a></li>';
           }
           ?>
         </ul>

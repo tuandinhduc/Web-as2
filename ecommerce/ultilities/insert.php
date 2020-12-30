@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include '../include/config.php';
 
 $fname = $_POST["fname"];
 $lname = $_POST["lname"];
@@ -22,7 +22,7 @@ if($result){
 else if($mysqli->query("INSERT INTO users (fname, lname, address, city, email, password) VALUES('$fname', '$lname', '$address', '$city', '$email', '$pwd')")){
 	echo 'Data inserted';
 	echo '<br/>';
-	header ("location:login.php");
+	header ("location:../pages/login.php");
 }
 
 ?>

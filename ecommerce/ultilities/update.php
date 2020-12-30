@@ -3,7 +3,7 @@
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-include 'config.php';
+include '../include/config.php';
 
 $fname = $_POST["fname"];
 $lname = $_POST["lname"];
@@ -59,7 +59,7 @@ if(/*$opwd === $obj->password &&*/ $pwd!=""){
 //  echo 'Wrong Password. Please try again. <a href="account.php">Go Back</a>';
 //}
 
-header("location:success.php");
+header("location:../pages/success.php");
 
 
 ?>

@@ -3,7 +3,7 @@
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-include 'config.php';
+include '../include/config.php';
 
 $product_id = $_GET['id'];
 $action = $_GET['action'];
@@ -40,6 +40,6 @@ if($result){
 
 
 
-header("location:cart.php");
+header("location:../pages/cart.php");
 
 ?>

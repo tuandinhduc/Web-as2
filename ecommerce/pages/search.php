@@ -2,7 +2,7 @@
 
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
-include 'config.php';
+include '../include/config.php';
 
 $query = $_GET['query'];
 
@@ -14,7 +14,7 @@ $query = $_GET['query'];
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products || BOLT Sports Shop</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -22,7 +22,7 @@ $query = $_GET['query'];
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">BOLT Sports Shop</a></h1>
+          <h1><a href="../index.php">BOLT Sports Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -83,7 +83,7 @@ $query = $_GET['query'];
                         echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
                         echo '<p><strong>Price (Per Unit)</strong>: '.$obj->price.$currency.'</p>';
                         if($obj->qty > 0){
-                            echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'"><input type="submit" value="Add To Cart" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; padding: 10px;" /></a></p>';
+                            echo '<p><a href="../ultilities/update-cart.php?action=add&id='.$obj->id.'"><input type="submit" value="Add To Cart" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; padding: 10px;" /></a></p>';
                         }
                     }
                     echo '</div>';

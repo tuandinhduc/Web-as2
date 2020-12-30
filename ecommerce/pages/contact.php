@@ -11,7 +11,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact || Shoes Shop</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -19,7 +19,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">Shoes Shop</a></h1>
+          <h1><a href="../index.php">Shoes Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>

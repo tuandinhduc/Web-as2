@@ -3,7 +3,7 @@
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-if (isset($_SESSION["username"])) {header ("location:index.php");}
+if (isset($_SESSION["username"])) {header ("location:../index.php");}
 
 $fnameErr = $lnameErr = $addressErr = $cityErr = $emailErr = $passwordErr = "";
 
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passwordErr = "Password must be at least 6 characters";
   }
   else {
-    include './insert.php';
+    include 'insert.php';
   }
 }
 
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register ||Shoes Shop</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">Shoes Shop</a></h1>
+          <h1><a href="../index.php">Shoes Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>

@@ -1,7 +1,7 @@
 <?php
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
-include 'config.php';
+include '../include/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ include 'config.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart || Shoes Shop</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -18,7 +18,7 @@ include 'config.php';
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">Shoes Shop</a></h1>
+          <h1><a href="../index.php">Shoes Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -97,7 +97,7 @@ include 'config.php';
           echo '<tr>';
           echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a>&nbsp;<a href="products.php" class="button [secondary success alert]">Continue Shopping</a>';
           if(isset($_SESSION['username'])) {
-            echo '<a href="orders-update.php"><button style="float:right;">COD</button></a>';
+            echo '<a href="../ultilities/orders-update.php"><button style="float:right;">COD</button></a>';
           }
 
           else {

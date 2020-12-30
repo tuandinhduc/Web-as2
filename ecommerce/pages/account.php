@@ -10,10 +10,10 @@ if(!isset($_SESSION["username"])) {
 }
 
 if($_SESSION["type"]==="admin") {
-  header("location:admin.php");
+  header("location:../admin/pages/admin.php");
 }
 
-include 'config.php';
+include '../include/config.php';
 
 ?>
 
@@ -24,7 +24,7 @@ include 'config.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Account || Shoes Shop</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -32,7 +32,7 @@ include 'config.php';
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">Shoes Shop</a></h1>
+          <h1><a href="../index.php">Shoes Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -74,7 +74,7 @@ include 'config.php';
     </div>
 
 
-    <form method="POST" action="update.php" style="margin-top:30px;">
+    <form method="POST" action="../ultilities/update.php" style="margin-top:30px;">
       <div class="row">
         <div class="small-12">
 

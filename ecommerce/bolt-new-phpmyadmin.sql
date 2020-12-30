@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 -- phpMyAdmin SQL Dump
 -- version 4.0.4.1
 -- http://www.phpmyadmin.net
